@@ -577,8 +577,18 @@ Ext.define('cropFormContainer', {
                     text: 'Let\'s check what we can grow',
                     align: 'center',
                     margin: '0 200',
-                    listeners: {
-                        click: getCropFormdata,
+                    handler: function () {
+                        var getForm = this.up("form").getForm();
+                        if (getForm.isValid()) {
+								getCropFormdata();
+                        } else {
+                            Ext.MessageBox.show({
+                                title: "ERROR-A1001",
+                                msg: "Please fill the required fields correctly.",
+                                buttons: Ext.MessageBox.OK,
+                                icon: Ext.MessageBox.WARNING
+                            });
+                        }
                     }
                 }
             ]
@@ -730,8 +740,18 @@ Ext.define('fertilizerFormContainer', {
                     text: 'Wanna Know Soil Booster Click me?',
                     align: 'center',
                     margin: '0 200',
-                    listeners: {
-                        click: getFertilizerFormdata,
+                    handler: function () {
+                        var getForm = this.up("form").getForm();
+                        if (getForm.isValid()) {
+								getFertilizerFormdata();
+                        } else {
+                            Ext.MessageBox.show({
+                                title: "ERROR-A1001",
+                                msg: "Please fill the required fields correctly.",
+                                buttons: Ext.MessageBox.OK,
+                                icon: Ext.MessageBox.WARNING
+                            });
+                        }
                     }
                 }
             ]
