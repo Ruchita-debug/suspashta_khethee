@@ -1,0 +1,23 @@
+{
+    "17-17-17": {"image_path": "../fertilizer_photos/17-17-17_fertilizer.jpg",
+            "desc": "NPK fertilizers are water-soluble and can be taken up by the plant almost immediately. An all-purpose, 17-17-17 fertilizer will provide the nutrients all plants need for healthy growth. seeds and seedlings stage - use 1/4 tsp NPK to 1 liter water. After 3-4 true leaves stage - use 1/2 tsp NPK to 1 liter water.",
+            "info_link": "https://www.mangalorechemicals.com/what_we_do/products_mangala_171717"},
+    "DAP": {"image_path": "../fertilizer_photos/DAP_fertilizer.jpg",
+                "desc": "Di-ammonium Phosphate popularly known as DAP is a preferred fertilizer in India because it contains both Nitrogen and Phosphorus which are primary macro-nutrients and part of 18 essential plant nutrients. Fertilizer grade DAP Contains 18% Nitrogen and 46% Phosphorus (P2O5",
+                "info_link": "https://www.mangalorechemicals.com/what_we_do/products_md_mangala_dap"},
+    "10-26-26": {"image_path": "../fertilizer_photos/10-26-26_fertilizer.jpg",
+                "desc": "10-26-26 is high in potassium and phosphorus and low in nitrogen, which is good for main application since autumn. It is particularly valuable for crops that require large amounts of available phosphorus and potassium in the soil.",
+                "info_link": "https://www.mangalorechemicals.com/what_we_do/products_mangala_102626"},
+    "28-28": {"image_path": "../fetilizer_photos/28-28_fertilizer.jpg",
+                "desc": "A complex fertiliser containing 2 major nutrients, Nitrogen at 28% and Phosphorus at 28%, provides instantaneous and prolonged greenness for crops.",
+                "info_link": "https://www.coromandel.biz/product-service/gromor-28-28-0/"},
+    "14-35-14": {"image_path": "../fertilizer_photos/14-35-14_fertilizer.jpg",
+                "desc": "GROMOR 14-35-14 is a complex fertiliser containing all major nutrients viz. Nitrogen, Phosphorous and Potassium. GROMOR 14-35-14 is a suitable complex for all soils since it is neutral in nature and does not leave any acidity or alkalinity in soil.",
+                "info_link": "https://efarmisto.com/product/gromor-14-35-14/"},
+    "Urea": {"image_path": "../fertilizer_photos/urea_fertilizer.jpg",
+                "desc": "Urea is a source of Nitrogen, an essential nutrient crucial for crop growth and development. Urea is the most important nitrogenous fertilizer in the country because of its high N content (46%N). It also has industrial applications such as the production of plastics and as a nutritional supplement for cattle.",
+                "info_link": "https://extension.umn.edu/nitrogen/fertilizer-urea"},
+    "20-20": {"image_path": "../fertilizer_photos/20-20_fetilizer.jpg",
+                "desc": "Water-soluble fertilizer NPK 20-20-20 is well balanced in nitrogen (N), phosphorus (P) and potassium (K) in the ratio of 20:20:20 . It contains magnesium and trace elements . It is formulated with high quality nutrients thereby obtaining a high solubility and perfect assimilation.",
+                "info_link": "https://www.indiamart.com/proddetail/npk-20-20-20-fertilizer-20374163091.html"}
+}

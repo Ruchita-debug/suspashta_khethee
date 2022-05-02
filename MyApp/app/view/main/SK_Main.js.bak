@@ -1,0 +1,828 @@
+/**
+ * This class is the main view for the application. It is specified in app.js as the
+ * "mainView" property. That setting automatically applies the "viewport"
+ * plugin causing this view to become the body element (i.e., the viewport).
+ *
+ * TODO - Replace this content of this view to suite the needs of your application.
+ */
+var cropPredicted = "barley";
+var fertilizerdata = {
+    "17-17-17": {
+        "image_path": "fertilizer_photos/17-17-17_fertilizer.jpg",
+        "desc": "NPK fertilizers are water-soluble and can be taken up by the plant almost immediately. An all-purpose, 17-17-17 fertilizer will provide the nutrients all plants need for healthy growth. seeds and seedlings stage - use 1/4 tsp NPK to 1 liter water. After 3-4 true leaves stage - use 1/2 tsp NPK to 1 liter water.",
+        "info_link": "https://www.mangalorechemicals.com/what_we_do/products_mangala_171717"
+    },
+    "DAP": {
+        "image_path": "fertilizer_photos/DAP_fertilizer.jpg",
+        "desc": "Di-ammonium Phosphate popularly known as DAP is a preferred fertilizer in India because it contains both Nitrogen and Phosphorus which are primary macro-nutrients and part of 18 essential plant nutrients. Fertilizer grade DAP Contains 18% Nitrogen and 46% Phosphorus (P2O5",
+        "info_link": "https://www.mangalorechemicals.com/what_we_do/products_md_mangala_dap"
+    },
+    "10-26-26": {
+        "image_path": "fertilizer_photos/10-26-26_fertilizer.jpg",
+        "desc": "10-26-26 is high in potassium and phosphorus and low in nitrogen, which is good for main application since autumn. It is particularly valuable for crops that require large amounts of available phosphorus and potassium in the soil.",
+        "info_link": "https://www.mangalorechemicals.com/what_we_do/products_mangala_102626"
+    },
+    "28-28": {
+        "image_path": "../fetilizer_photos/28-28_fertilizer.jpg",
+        "desc": "A complex fertiliser containing 2 major nutrients, Nitrogen at 28% and Phosphorus at 28%, provides instantaneous and prolonged greenness for crops.",
+        "info_link": "https://www.coromandel.biz/product-service/gromor-28-28-0/"
+    },
+    "14-35-14": {
+        "image_path": "fertilizer_photos/14-35-14_fertilizer.jpg",
+        "desc": "GROMOR 14-35-14 is a complex fertiliser containing all major nutrients viz. Nitrogen, Phosphorous and Potassium. GROMOR 14-35-14 is a suitable complex for all soils since it is neutral in nature and does not leave any acidity or alkalinity in soil.",
+        "info_link": "https://efarmisto.com/product/gromor-14-35-14/"
+    },
+    "Urea": {
+        "image_path": "fertilizer_photos/urea_fertilizer.jpg",
+        "desc": "Urea is a source of Nitrogen, an essential nutrient crucial for crop growth and development. Urea is the most important nitrogenous fertilizer in the country because of its high N content (46%N). It also has industrial applications such as the production of plastics and as a nutritional supplement for cattle.",
+        "info_link": "https://extension.umn.edu/nitrogen/fertilizer-urea"
+    },
+    "20-20": {
+        "image_path": "fertilizer_photos/20-20_fetilizer.jpg",
+        "desc": "Water-soluble fertilizer NPK 20-20-20 is well balanced in nitrogen (N), phosphorus (P) and potassium (K) in the ratio of 20:20:20 . It contains magnesium and trace elements . It is formulated with high quality nutrients thereby obtaining a high solubility and perfect assimilation.",
+        "info_link": "https://www.indiamart.com/proddetail/npk-20-20-20-fertilizer-20374163091.html"
+    }
+};
+var cropData =
+    [{
+        "name": "apple",
+        "imgSrc": "crop_images/apple.jpeg",
+        "imgDesc": "Apple (Malus pumila) is an important temperate fruit. Apples are mostly consumed fresh but a small part of the production is processed in to  juices, jellies, canned slices and other items.",
+        "infoLink": "https://en.wikipedia.org/wiki/Apple"
+    }, {
+        "name": "banana",
+        "imgSrc": "crop_images/banana.jpeg",
+        "imgDesc": "Banana is a globally important fruit crop with 97.5 million tones of production. In India it supports livelihood of million of people. With total annual production of 16.91 million tones from 490.70 thousand ha., with national average of 33.5 T/ha.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/fruits-1/banana"
+    }, {
+        "name": "barley",
+        "imgSrc": "crop_images/barley.jpeg",
+        "imgDesc": "Barley may be grown in subtropical climatic condition. The crop requires around 12-15 0C during growing period and around 30 0C at maturity. It can not tolerate frost at any stage of growth and incidence of frost at flowering at highly detrimental for yield. The crop posses vary high degree of tolerance to drought and sodic condition.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/cereals-and-millets/bajra"
+    }, {
+        "name": "blackgram",
+        "imgSrc": "crop_images/blackgram.jpeg",
+        "imgDesc": "Black gram (Vigna Mungo L.), is one of the important pulses crop, grown throughout the country. The crop is resistant to adverse climatic conditions and improve the soil fertility by fixing atmospheric nitrogen in the soil.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/blackgram-and-greengram"
+    }, {
+        "name": "chickpea",
+        "imgSrc": "crop_images/chickpea.jpeg",
+        "imgDesc": "Chana or Chickpeas is a Rabi Crop and sown between October-November. The plant of chickpea is bushy and grows up to 18 inches in length. It is a cool-season legume that grows best between 70-80 degrees.",
+        "infoLink": "https://krishijagran.com/agripedia/complete-guide-to-chickpeas-farming-varieties-climate-requirement-harvesting-yield-and-economics/"
+    }, {
+        "name": "coconut",
+        "imgSrc": "crop_images/coconut.jpeg",
+        "imgDesc": "The coconut palm is referred to as 'Kalpavriksha' - the 'tree of heaven' as each and every part of the palm is useful to mankind in one way or other. It provides food, drink, fuel and timber. Millions of families in India depend on coconut for their livelihood either directly or indirectly India ranks third in area and production of coconut in the world.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/plantation-crops/coconut/coconut-cultivation-practices"
+    }, {
+        "name": "coffee",
+        "imgSrc": "crop_images/coffee.jpeg",
+        "imgDesc": "Coffee is an export product with low import intensity and high employment content. This is evident from the fact that more than six lakh persons are directly employed and an equal numbers of individuals get indirect employment from this sector.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/plantation-crops/coffee"
+    }, {
+        "name": "cotton",
+        "imgSrc": "crop_images/cotton.jpeg",
+        "imgDesc": "Cotton is one of the most important fibers and a cash crop of India and plays a dominant role in the industrial and agricultural economy of the country.",
+        "infoLink": "https://www.agrifarming.in/cotton-farming-guide"
+    }, {
+        "name": "grapes",
+        "imgSrc": "crop_images/grapes.jpeg",
+        "imgDesc": "Grape (Vitis sp.) belonging to Family Vitaceae is a commercially important fruit crop of India. It is a temperate crop which has got adapted to sub-tropical climate of peninsular India. About 80% of the production comes from Maharashtra followed by Karnataka and Tamil Nadu.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/fruits-1/jamun-1"
+    }, {
+        "name": "ground nuts",
+        "imgSrc": "crop_images/ground_nuts.jpeg",
+        "imgDesc": "Groundnut is a significant oilseed, ideal for cultivation in tropic regions of the country. Groundnut (Arachis hypogaea), is a species in the legume or 'bean' family.",
+        "infoLink": "https://www.apnikheti.com/en/pn/agriculture/crops/oilseeds/groundnut"
+    }, {
+        "name": "jute",
+        "imgSrc": "crop_images/jute.jpeg",
+        "imgDesc": "Jute is one of the most important natural fibers after cotton in terms of cultivation and usage. Cultivation is dependent on the climate, season, and soil. Almost 85% of the world's jute cultivation is concentrated in the Ganges Delta.",
+        "infoLink": "https://en.wikipedia.org/wiki/Jute_cultivation"
+    }, {
+        "name": "kidneybeans",
+        "imgSrc": "crop_images/kidneybeans.jpeg",
+        "imgDesc": "Kidney beans is also known as the chilli bean because of its dark red color and the visually resemblance the shape of a kidney. Kidney beans are a good source of protein also it is excellent source of molybdenum.",
+        "infoLink": "https://www.apnikheti.com/en/pn/agriculture/crops/pulses/kidney-bean-rajma"
+    }, {
+        "name": "lentil",
+        "imgSrc": "crop_images/lentil.jpeg",
+        "imgDesc": "Lentil is a valuable human food, mostly consumed as dry seeds (whole decorticated, seed decorticated and split). In India, its mostly consumed as ‘Dal’ by removal of outer skin and separation of cotyledons.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/lentil-rabi"
+    }, {
+        "name": "maize",
+        "imgSrc": "crop_images/maize.jpeg",
+        "imgDesc": "Maize (Zea mays L) is one of the most versatile emerging crops having wider adaptability under varied agro-climatic conditions. Globally, maize is known as queen of cereals because it has the highest genetic yield potential among the cereals.",
+        "infoLink": "https://www.agrifarming.in/maize-farming"
+    }, {
+        "name": "mango",
+        "imgSrc": "crop_images/mango.jpeg",
+        "imgDesc": "Mango Farming is he leading fruit crop farming in India and considered to be the king of fruits. Besides the delicious taste, excellent flavor and attractive fragrance, it is rich in vitamin A&C.",
+        "infoLink": "https://www.agrifarming.in/mango-farming"
+    }, {
+        "name": "millets",
+        "imgSrc": "crop_images/millets.jpeg",
+        "imgDesc": "The millets are a group of highly variable small-seeded grasses; widely grown around the world as cereal crops or grains for both human food and fodder.",
+        "infoLink": "https://www.agrifarming.in/millets-farming-millets-cultivation-practices"
+    }, {
+        "name": "mothbeans",
+        "imgSrc": "crop_images/mothbeans.jpeg",
+        "imgDesc": "Moth bean crop grows to about 40 cm high. It has yellow flowers on hairy and densely packed branches that develop into yellow-brown pods.",
+        "infoLink": "https://www.agrifarming.in/moth-bean-cultivation-farming-practices-in-india"
+    }, {
+        "name": "mungbean",
+        "imgSrc": "crop_images/mungbean.jpeg",
+        "imgDesc": "Mungbean (Vigna radiata) is one of the most important pulse crops. It is grown in almost all parts of the country. Mungbean is primarily a crop of rainy season; however, with the development of early maturing varieties, it has proved to be an ideal crop for spring and summer seasons.",
+        "infoLink": "https://www.agrifarming.in/mung-bean-cultivation-income-green-gram-profits"
+    }, {
+        "name": "muskmelon",
+        "imgSrc": "crop_images/muskmelon.jpeg",
+        "imgDesc": "Cantaloupe/Musk melon/Kharbooj is a popular fruit crop grown throughout the India. This fruit is being used as desert fruit and also eaten fresh. This fruit belongs to 'Cucurbitaceae' family and its botanical name is 'Cucumus Mela .L.'",
+        "infoLink": "https://www.agrifarming.in/cantaloupe-farming"
+    }, {
+        "name": "oil seeds",
+        "imgSrc": "crop_images/oil_seeds.jpeg",
+        "imgDesc": "Oilseeds occupy a very important position in the agricultural economy of India. Oilseeds constitute an important group of commercial crops in India.",
+        "infoLink": "https://www.agrifarming.in/oilseeds-farming-in-india-a-profitable-business"
+    }, {
+        "name": "orange",
+        "imgSrc": "crop_images/orange.jpeg",
+        "imgDesc": "Madarin orange(Citrus reticulata) is most common among citrus fruits grown in India. It occupies early 40% of the total area under citrus cultivation in India.",
+        "infoLink": "https://www.agrifarming.in/orange-farming"
+    }, {
+        "name": "paddy",
+        "imgSrc": "crop_images/paddy.jpeg",
+        "imgDesc": "Rice is the staple crop of India, and every day millions of Indians find comfort in it. With a high carbohydrate content, it is known to provide instant energy, and is a staple that is consumed by the majority of India’s population. Hence, the importance of rice crop in the country can’t be negated.",
+        "infoLink": "https://geographyandyou.com/cultivating-rice-crop/"
+    }, {
+        "name": "papaya",
+        "imgSrc": "crop_images/papaya.jpeg",
+        "imgDesc": "Papaya is a popular fruit famous for its high nutritive and medicinal values. It comes early in bearing than any other fruit crop, produces fruits in less than a year and the production of fruits is quite high per unit area.",
+        "infoLink": "https://www.bighaat.com/pages/papaya-farming"
+    }, {
+        "name": "pigeonpeas",
+        "imgSrc": "crop_images/pigeonpeas.jpeg",
+        "imgDesc": "Pigeonpea (Cajanus cajan (L.) Millsp.), commonly known as red gram or tur or Arhar, is a very old crop of this country. After gram, arhar is the second most important pulse crop in the country.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/pigeon-pea"
+    }, {
+        "name": "pomegranate",
+        "imgSrc": "crop_images/pomegranate.jpeg",
+        "imgDesc": "Pomegranate (Punica granatum) is one of the commercially important fruit crops of India. It is native to Iran (Persia).",
+        "infoLink": "https://agricultureguruji.com/pomegranate-farming/"
+    }, {
+        "name": "pulses",
+        "imgSrc": "crop_images/pulses.jpeg",
+        "imgDesc": "Pulses are annual leguminous crops yielding between one and 12 grains or seeds of variable size, shape and colour within a pod, used for both food and feed.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/pulses-in-india"
+    }, {
+        "name": "rice",
+        "imgSrc": "crop_images/rice.jpeg",
+        "imgDesc": "Rice is the staple crop of India, and every day millions of Indians find comfort in it. With a high carbohydrate content, it is known to provide instant energy, and is a staple that is consumed by the majority of India’s population. Hence, the importance of rice crop in the country can’t be negated.",
+        "infoLink": "https://geographyandyou.com/cultivating-rice-crop/"
+    }, {
+        "name": "sugarcane",
+        "imgSrc": "crop_images/sugarcane.jpeg",
+        "imgDesc": "THE sugarcane sector plays a significant role in Indian economy as it provides raw material for sugar and industries producing alcohol, paper, chemicals and cattle feed.",
+        "infoLink": "https://www.agrifarming.in/sugarcane-farming-for-guide-beginners"
+    }, {
+        "name": "tobacco",
+        "imgSrc": "crop_images/tobacco.jpeg",
+        "imgDesc": "In India, tobacco is grown on 0.45 M ha of area (accounting for only 0.31% of net cultivated area in the country) with 750 M kg production. The world tobacco production is ~7 billion kg, China occupying the first place with 2.35 billion kg.",
+        "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/commercial-crops/tobacco"
+    }, {
+        "name": "watermelon",
+        "imgSrc": "crop_images/watermelon.jpeg",
+        "imgDesc": "Watermelon is originated in South Africa. It is an important cucurbitaceous vegetable in India. It is an excellent desert fruit and its juice contain 92% water along with proteins, minerals and carbohydrates.",
+        "infoLink": "https://www.apnikheti.com/en/pn/agriculture/horticulture/fruit/watermelon"
+    }, {
+        "name": "wheat",
+        "imgSrc": "crop_images/wheat.jpeg",
+        "imgDesc": "Wheat is the main cereal crop in India. The total area under the crop is about 29.8 million hectares in the country.",
+        "infoLink": "https://farmer.gov.in/m_cropstaticswheat.aspx"
+    }
+];
+
+function loadDoc_fertilizer(instance) {
+    var url = "https://us-central1-aiplatform.googleapis.com/v1/projects/967879429686/locations/us-central1/endpoints/8594530550604103680:predict";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.setRequestHeader("Authorization", "Bearer ya29.A0ARrdaM9f6Ja7EqZqvf3l2QtRSp6m77_X-sYLZneq8yqGx4f7yWaJdrdGwG14JEAzMiJmZlTKq34wFbYXy3wI-jKV-S_HPbWlJR1u90IgBkvJHQ3wSRt3GpXDqTur6agk0ZOl6iOWhU1dXRyqglAxRo2BF88MVQ");
+    xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            if (xhr.status === 200) {
+                //cropPredicted="";
+                var imgSrc = "";
+                var imgDesc = "";
+                var infoLink = "";
+                console.log(xhr.responseText);
+                var temp = JSON.parse(xhr.responseText);
+                var score_values = temp['predictions']['0']['scores'];
+                var cropType = temp['predictions']['0']['classes'];
+                var maxscore = score_values.indexOf(Math.max.apply(Math, temp['predictions']['0']['scores']));
+                cropPredicted = cropType[maxscore];
+
+                imgSrc = fertilizerdata[cropPredicted].image_path;
+                imgDesc = fertilizerdata[cropPredicted].desc;
+                infoLink = fertilizerdata[cropPredicted].info_link;
+
+                console.log(imgSrc, imgDesc, infoLink);
+                win = new Ext.Window({
+                    title: 'Prediction Result',
+                    width: 700,
+                    height: 400,
+                    layout: 'fit',
+                    padding: '10 10 10 10',
+                    closeAction: 'close',
+
+                    html: '<div class="container" style="position: relative;width: 100%;"><h1>Hi there! You have to use ' + cropPredicted + ' for your soil</h1><img src="' + imgSrc + '" style="float: right;"><div class="overlay"><div class="text"><br><p>' + imgDesc + '<br></div></div></div>'
+
+                });
+                Ext.create(win);
+                win.show();
+            } else if (xhr.status === 400) {
+                Ext.Msg.alert('Oops Wrong Data!', 'Please Check Your Parameters');
+            } else if (xhr.status === 401) {
+                Ext.Msg.alert('Sorry!', 'We will be back soon!!');
+                console.log(xhr.responseText)
+            }
+        }
+    };
+
+    var data = instance;
+
+    xhr.send(data);
+}
+
+function loadDoc(instance) {
+    var url = "https://us-central1-aiplatform.googleapis.com/v1/projects/967879429686/locations/us-central1/endpoints/4167492116898906112:predict";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.setRequestHeader("Authorization", "Bearer ya29.A0ARrdaM9wv1wLDg1AaBX-caHYqb-hlg0wA535gjRxYSwYC5CJGpsUZhKWc1FFY3KRlv3htDxmiaKkxNr2lRdihkWImPR_9HiHO0GHySkJXnuVJlxYbEgekjbccrdLtTrylxpA8WHGN7sdMDXyqfv5bq469C8vig");
+    xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            if (xhr.status === 200) {
+                //cropPredicted="";
+                var imgSrc = "";
+                var imgDesc = "";
+                var infoLink = "";
+                console.log(xhr.responseText);
+                var temp = JSON.parse(xhr.responseText);
+                var score_values = temp['predictions']['0']['scores'];
+                var cropType = temp['predictions']['0']['classes'];
+                var maxscore = score_values.indexOf(Math.max.apply(Math, temp['predictions']['0']['scores']));
+                cropPredicted = cropType[maxscore];
+                console.log(cropPredicted);
+                for (var i in cropData) {
+                    if (cropData[i].name === cropPredicted) {
+                        imgSrc = cropData[i].imgSrc;
+                        imgDesc = cropData[i].imgDesc;
+                        infoLink = cropData[i].infoLink;
+                        break;
+                    }
+
+                }
+                console.log(imgSrc, imgDesc, infoLink);
+                win = new Ext.Window({
+                    title: 'Prediction Result',
+                    width: 700,
+                    height: 400,
+                    layout: 'fit',
+                    padding: '10 10 10 10',
+                    closeAction: 'close',
+
+                    html: '<div class="container" style="position: relative;width: 100%;"><h1>Hi there! You can grow ' + cropPredicted + '</h1><img src="' + imgSrc + '" style="float: right;"><div class="overlay"><div class="text"><br><p>' + imgDesc + '<br></div></div></div>'
+
+                });
+                Ext.create(win);
+                win.show();
+            } else if (xhr.status === 400) {
+                Ext.Msg.alert('Oops Wrong Data!', 'Please Check Your Parameters');
+            } else if (xhr.status === 401) {
+                Ext.Msg.alert('Sorry!', 'We will be back soon!!');
+                console.log(xhr.responseText)
+            }
+        }
+    };
+
+    var data = instance;
+
+    xhr.send(data);
+
+}
+
+var getCropFormdata = function () {
+    var cropdirtydata = Ext.getCmp('cropForm').getValues();
+    var output = {};
+    for (var i in cropdirtydata) {
+
+        output[i.replace('-inputEl', '')] = cropdirtydata[i];
+    };
+    var oarray = [output];
+    var finaloutput = {};
+    finaloutput['instances'] = oarray
+        loadDoc(JSON.stringify(finaloutput));
+    console.log(finaloutput);
+
+};
+
+var getFertilizerFormdata = function () {
+    var fertilizerdirtydata = Ext.getCmp('fertilizerForm').getValues();
+    var output_fert = {};
+    for (var i in fertilizerdirtydata) {
+
+        output_fert[i.replace('_f-inputEl', '')] = fertilizerdirtydata[i];
+    };
+    var oarray = [output_fert];
+    var finaloutput = {};
+    finaloutput['instances'] = oarray
+        loadDoc_fertilizer(JSON.stringify(finaloutput));
+    console.log(finaloutput);
+};
+var cropType = Ext.create('Ext.data.Store', {
+    fields: ['abbr', 'name'],
+    data: [{
+            "abbr": "apple",
+            "name": "APPLE"
+        }, {
+            "abbr": "banana",
+            "name": "BANANA"
+        }, {
+            "abbr": "Barley",
+            "name": "BARLEY"
+        }, {
+            "abbr": "blackgram",
+            "name": "BLACKGRAM"
+        }, {
+            "abbr": "chickpea",
+            "name": "CHICKPEA"
+        }, {
+            "abbr": "coconut",
+            "name": "COCONUT"
+        }, {
+            "abbr": "coffee",
+            "name": "COFFEE"
+        }, {
+            "abbr": "cotton",
+            "name": "COTTON"
+        }, {
+            "abbr": "grapes",
+            "name": "GRAPES"
+        }, {
+            "abbr": "Ground nuts",
+            "name": "GROUND NUTS"
+        }, {
+            "abbr": "jute",
+            "name": "JUTE"
+        }, {
+            "abbr": "kidneybeans",
+            "name": "KIDNEYBEANS"
+        }, {
+            "abbr": "lentil",
+            "name": "LENTIL"
+        }, {
+            "abbr": "maize",
+            "name": "MAIZE"
+        }, {
+            "abbr": "mango",
+            "name": "MANGO"
+        }, {
+            "abbr": "Millets",
+            "name": "MILLETS"
+        }, {
+            "abbr": "mothbeans",
+            "name": "MOTHBEANS"
+        }, {
+            "abbr": "mungbean",
+            "name": "MUNGBEAN"
+        }, {
+            "abbr": "muskmelon",
+            "name": "MUSKMELON"
+        }, {
+            "abbr": "Oil seeds",
+            "name": "OIL SEEDS"
+        }, {
+            "abbr": "orange",
+            "name": "ORANGE"
+        }, {
+            "abbr": "papaya",
+            "name": "PAPAYA"
+        }, {
+            "abbr": "pigeonpeas",
+            "name": "PIGEONPEAS"
+        }, {
+            "abbr": "pomegranate",
+            "name": "POMEGRANATE"
+        }, {
+            "abbr": "Pulses",
+            "name": "PULSES"
+        }, {
+            "abbr": "rice",
+            "name": "RICE"
+        }, {
+            "abbr": "Sugarcane",
+            "name": "SUGARCANE"
+        }, {
+            "abbr": "Tobacco",
+            "name": "TOBACCO"
+        }, {
+            "abbr": "watermelon",
+            "name": "WATERMELON"
+        }, {
+            "abbr": "Wheat",
+            "name": "WHEAT"
+        },
+    ]
+});
+
+Ext.define('cropFormContainer', {
+    extend: 'Ext.container.Container',
+    id: 'cropFormContainer',
+    border: true,
+    width: 600,
+    margin: '10 10 10 10',
+    items: [{
+            xtype: 'form',
+            id: 'cropForm',
+            //layout: 'vbox',
+            width: 'auto',
+            height: 500,
+            margin: '25 25 25 25',
+            padding: '10 10 10 10',
+            items: [{
+                    xtype: 'numberfield',
+                    fieldLabel: 'Humidity',
+                    id: 'humidity',
+                    tooltip: 'Enter humidity of your area',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter humidity of soil'
+                    },
+                    allowBlank: false
+
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Moisture Content',
+                    id: 'moisture_content',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter moisture content of soil'
+                    },
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Nitrogen',
+                    id: 'nitrogen',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter Nitrogen content of soil'
+                    },
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'ph',
+                    id: 'ph',
+                    anchor: '100%',
+                    minValue: 1,
+                    maxValue: 14,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Phosphorous',
+                    id: 'phosphorous',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Potassium',
+                    id: 'potassium',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Rainfall',
+                    id: 'rainfall',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 5000,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'combobox',
+                    fieldLabel: 'Soil Type',
+                    id: 'soil_content',
+                    anchor: '100%',
+                    allowBlank: false,
+                    queryMode: 'local',
+                    forceSelection: true,
+                    store: Ext.create('Ext.data.Store', {
+                        fields: ['abbr', 'name'],
+                        data: [{
+                                'abbr': 'Sandy',
+                                'name': 'Sandy'
+                            }, {
+                                'abbr': 'Loamy',
+                                'name': 'Loamy'
+                            }, {
+                                'abbr': 'Red',
+                                'name': 'Red'
+                            }, {
+                                'abbr': 'Clayey',
+                                'name': 'Clayey'
+                            }, {
+                                'abbr': 'Black',
+                                'name': 'Black'
+                            }
+                        ]
+                    }),
+                    valueField: 'abbr',
+                    displayField: 'name'
+                }, {
+                    xtype: 'numberfield',
+                    id: 'temperature',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    fieldLabel: 'Temperature',
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'button',
+                    id: 'crop_prediction',
+                    text: 'Let\'s check what we can grow',
+                    align: 'center',
+                    margin: '0 200',
+                    listeners: {
+                        click: getCropFormdata,
+                    }
+                }
+            ]
+        }
+    ]
+});
+
+Ext.define('fertilizerFormContainer', {
+    extend: 'Ext.container.Container',
+    id: 'fertilizerFormContainer',
+    border: true,
+    width: 600,
+    margin: '10 10 10 10',
+    items: [{
+            xtype: 'form',
+            id: 'fertilizerForm',
+            //layout: 'vbox',
+            width: 'auto',
+            height: 500,
+            margin: '25 25 25 25',
+            padding: '10 10 10 10',
+            items: [{
+                    xtype: 'numberfield',
+                    fieldLabel: 'Humidity',
+                    id: 'humidity_f',
+                    tooltip: 'Enter humidity of your area',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter humidity of soil'
+                    },
+                    allowBlank: false
+
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Moisture Content',
+                    id: 'moisture_content_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter moisture content of soil'
+                    },
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Nitrogen',
+                    id: 'nitrogen_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    autoEl: {
+                        'data-qtip': 'Please enter Nitrogen content of soil'
+                    },
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'ph',
+                    id: 'ph_f',
+                    anchor: '100%',
+                    minValue: 1,
+                    maxValue: 14,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Phosphorous',
+                    id: 'phosphorous_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Potassium',
+                    id: 'potassium_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'numberfield',
+                    fieldLabel: 'Rainfall',
+                    id: 'rainfall_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 5000,
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'combobox',
+                    fieldLabel: 'Soil Type',
+                    id: 'soil_content_f',
+                    anchor: '100%',
+                    allowBlank: false,
+                    queryMode: 'local',
+                    forceSelection: true,
+                    store: Ext.create('Ext.data.Store', {
+                        fields: ['abbr', 'name'],
+                        data: [{
+                                'abbr': 'Sandy',
+                                'name': 'Sandy'
+                            }, {
+                                'abbr': 'Loamy',
+                                'name': 'Loamy'
+                            }, {
+                                'abbr': 'Red',
+                                'name': 'Red'
+                            }, {
+                                'abbr': 'Clayey',
+                                'name': 'Clayey'
+                            }, {
+                                'abbr': 'Black',
+                                'name': 'Black'
+                            }
+                        ]
+                    }),
+                    valueField: 'abbr',
+                    displayField: 'name'
+                }, {
+                    xtype: 'combobox',
+                    fieldLabel: 'Crop Type',
+                    id: 'crop_type_f',
+                    anchor: '100%',
+                    allowBlank: false,
+                    store: cropType,
+                    valueField: 'abbr',
+                    displayField: 'name',
+                    queryMode: 'local',
+                    forceSelection: true
+                }, {
+                    xtype: 'numberfield',
+                    id: 'temperature_f',
+                    anchor: '100%',
+                    minValue: 0,
+                    maxValue: 100,
+                    fieldLabel: 'Temperature',
+                    step: 0.01,
+                    allowBlank: false
+                }, {
+                    xtype: 'button',
+                    id: 'fertilizer_prediction',
+                    text: 'Wanna Know Soil Booster Click me?',
+                    align: 'center',
+                    margin: '0 200',
+                    listeners: {
+                        click: getFertilizerFormdata,
+                    }
+                }
+            ]
+        }
+    ]
+});
+var cropCont = Ext.create("cropFormContainer");
+var fertilizerCont = Ext.create("fertilizerFormContainer");
+Ext.define('MyApp.view.SK_Main', {
+    extend: 'Ext.container.Container',
+    xtype: 'app-main',
+
+    controller: 'main',
+    viewModel: 'main',
+
+    ui: 'navigation',
+
+    items: [{
+            xtype: 'tabpanel',
+            activeTab: 0,
+            id: 'mainTab',
+            height: 700,
+            requires: [
+                'Ext.plugin.Viewport',
+                'Ext.window.MessageBox',
+            ],
+            tabBarHeaderPosition: 1,
+            titleRotation: 0,
+            tabRotation: 0,
+
+            header: {
+                layout: {
+                    align: 'stretchmax',
+                },
+                icon: 'logo_png.png',
+                //iconCls: 'fa-th-list'
+            },
+
+            tabBarHeaderPosition: 1,
+            tabBar: {
+                flex: 10,
+                layout: {
+                    align: 'stretch',
+                    overflowHandler: 'none'
+                }
+            },
+            tabPosition: 'left',
+
+            items: [{
+                    title: 'Crops',
+                    layout: 'hbox',
+                    //iconCls: 'fa-home',
+                    // The following grid shares a store with the classic version's grid as well!
+                    items: [{
+                            flex: 1,
+                            id: 'cropFormItems',
+                            align: 'center',
+                            pack: 'center',
+                            items: [{
+                                    xtype: 'container',
+                                    cls: 'cropped',
+                                    id: 'cropFormMainContainer',
+                                    items: [cropCont]
+                                }
+                            ]
+                        }
+                    ]
+                }, {
+                    title: 'Fertilizers',
+                    //iconCls: 'fa-user',
+                    layout: 'hbox',
+                    //iconCls: 'fa-home',
+                    // The following grid shares a store with the classic version's grid as well!
+                    items: [{
+                            flex: 1,
+                            id: 'fertilizerFormItems',
+                            align: 'center',
+                            pack: 'center',
+                            items: [{
+                                    xtype: 'container',
+                                    cls: 'fertilizer',
+                                    id: 'fertilizerFormMainContainer',
+                                    items: [fertilizerCont]
+                                }
+                            ]
+                        }
+                    ]
+
+                }
+            ]
+        }
+    ]
+});
+//Crop Form

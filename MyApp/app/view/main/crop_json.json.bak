@@ -1,0 +1,187 @@
+{
+    "name": "apple",
+    "imgSrc": "crop_images/apple.jpeg",
+    "imgDesc": "Apple (Malus pumila) is an important temperate fruit. Apples are mostly consumed fresh but a small part of the production is processed in to  juices, jellies, canned slices and other items.",
+    "infoLink": "https://en.wikipedia.org/wiki/Apple"
+},
+{
+    "name": "banana",
+    "imgSrc": "crop_images/banana.jpeg",
+    "imgDesc": "Banana is a globally important fruit crop with 97.5 million tones of production. In India it supports livelihood of million of people. With total annual production of 16.91 million tones from 490.70 thousand ha., with national average of 33.5 T/ha.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/fruits-1/banana"
+},
+{
+    "name": "barley",
+    "imgSrc": "crop_images/barley.jpeg",
+    "imgDesc": "Barley may be grown in subtropical climatic condition. The crop requires around 12-15 0C during growing period and around 30 0C at maturity. It can not tolerate frost at any stage of growth and incidence of frost at flowering at highly detrimental for yield. The crop posses vary high degree of tolerance to drought and sodic condition.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/cereals-and-millets/bajra"
+},
+{
+    "name": "blackgram",
+    "imgSrc": "crop_images/blackgram.jpeg",
+    "imgDesc": "Black gram (Vigna Mungo L.), is one of the important pulses crop, grown throughout the country. The crop is resistant to adverse climatic conditions and improve the soil fertility by fixing atmospheric nitrogen in the soil.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/blackgram-and-greengram"
+},
+{
+    "name": "chickpea",
+    "imgSrc": "crop_images/chickpea.jpeg",
+    "imgDesc": "Chana or Chickpeas is a Rabi Crop and sown between October-November. The plant of chickpea is bushy and grows up to 18 inches in length. It is a cool-season legume that grows best between 70-80 degrees.",
+    "infoLink": "https://krishijagran.com/agripedia/complete-guide-to-chickpeas-farming-varieties-climate-requirement-harvesting-yield-and-economics/"
+},
+{
+    "name": "coconut",
+    "imgSrc": "crop_images/coconut.jpeg",
+    "imgDesc": "The coconut palm is referred to as 'Kalpavriksha' - the 'tree of heaven' as each and every part of the palm is useful to mankind in one way or other. It provides food, drink, fuel and timber. Millions of families in India depend on coconut for their livelihood either directly or indirectly India ranks third in area and production of coconut in the world.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/plantation-crops/coconut/coconut-cultivation-practices"
+},
+{
+    "name": "coffee",
+    "imgSrc": "crop_images/coffee.jpeg",
+    "imgDesc": "Coffee is an export product with low import intensity and high employment content. This is evident from the fact that more than six lakh persons are directly employed and an equal numbers of individuals get indirect employment from this sector.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/plantation-crops/coffee"
+},
+{
+    "name": "cotton",
+    "imgSrc": "crop_images/cotton.jpeg",
+    "imgDesc": "Cotton is one of the most important fibers and a cash crop of India and plays a dominant role in the industrial and agricultural economy of the country.",
+    "infoLink": "https://www.agrifarming.in/cotton-farming-guide"
+},
+{
+    "name": "grapes",
+    "imgSrc": "crop_images/grapes.jpeg",
+    "imgDesc": "Grape (Vitis sp.) belonging to Family Vitaceae is a commercially important fruit crop of India. It is a temperate crop which has got adapted to sub-tropical climate of peninsular India. About 80% of the production comes from Maharashtra followed by Karnataka and Tamil Nadu.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/fruits-1/jamun-1"
+},
+{
+    "name": "ground nuts",
+    "imgSrc": "crop_images/ground_nuts.jpeg",
+    "imgDesc": "Groundnut is a significant oilseed, ideal for cultivation in tropic regions of the country. Groundnut (Arachis hypogaea), is a species in the legume or 'bean' family.",
+    "infoLink": "https://www.apnikheti.com/en/pn/agriculture/crops/oilseeds/groundnut"
+},
+{
+    "name": "jute",
+    "imgSrc": "crop_images/jute.jpeg",
+    "imgDesc": "Jute is one of the most important natural fibers after cotton in terms of cultivation and usage. Cultivation is dependent on the climate, season, and soil. Almost 85% of the world's jute cultivation is concentrated in the Ganges Delta.",
+    "infoLink": "https://en.wikipedia.org/wiki/Jute_cultivation"
+},
+{
+    "name": "kidneybeans",
+    "imgSrc": "crop_images/kidneybeans.jpeg",
+    "imgDesc": "Kidney beans is also known as the chilli bean because of its dark red color and the visually resemblance the shape of a kidney. Kidney beans are a good source of protein also it is excellent source of molybdenum.",
+    "infoLink": "https://www.apnikheti.com/en/pn/agriculture/crops/pulses/kidney-bean-rajma"
+},
+{
+    "name": "lentil",
+    "imgSrc": "crop_images/lentil.jpeg",
+    "imgDesc": "Lentil is a valuable human food, mostly consumed as dry seeds (whole decorticated, seed decorticated and split). In India, its mostly consumed as ‘Dal’ by removal of outer skin and separation of cotyledons.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/lentil-rabi"
+},
+{
+    "name": "maize",
+    "imgSrc": "crop_images/maize.jpeg",
+    "imgDesc": "Maize (Zea mays L) is one of the most versatile emerging crops having wider adaptability under varied agro-climatic conditions. Globally, maize is known as queen of cereals because it has the highest genetic yield potential among the cereals.",
+    "infoLink": "https://www.agrifarming.in/maize-farming"
+},
+{
+    "name": "mango",
+    "imgSrc": "crop_images/mango.jpeg",
+    "imgDesc": "Mango Farming is he leading fruit crop farming in India and considered to be the king of fruits. Besides the delicious taste, excellent flavor and attractive fragrance, it is rich in vitamin A&C.",
+    "infoLink": "https://www.agrifarming.in/mango-farming"
+},
+{
+    "name": "millets",
+    "imgSrc": "crop_images/millets.jpeg",
+    "imgDesc": "The millets are a group of highly variable small-seeded grasses; widely grown around the world as cereal crops or grains for both human food and fodder.",
+    "infoLink": "https://www.agrifarming.in/millets-farming-millets-cultivation-practices"
+},
+{
+    "name": "mothbeans",
+    "imgSrc": "crop_images/mothbeans.jpeg",
+    "imgDesc": "Moth bean crop grows to about 40 cm high. It has yellow flowers on hairy and densely packed branches that develop into yellow-brown pods.",
+    "infoLink": "https://www.agrifarming.in/moth-bean-cultivation-farming-practices-in-india"
+},
+{
+    "name": "mungbean",
+    "imgSrc": "crop_images/mungbean.jpeg",
+    "imgDesc": "Mungbean (Vigna radiata) is one of the most important pulse crops. It is grown in almost all parts of the country. Mungbean is primarily a crop of rainy season; however, with the development of early maturing varieties, it has proved to be an ideal crop for spring and summer seasons.",
+    "infoLink": "https://www.agrifarming.in/mung-bean-cultivation-income-green-gram-profits"
+},
+{
+    "name": "muskmelon",
+    "imgSrc": "crop_images/muskmelon.jpeg",
+    "imgDesc": "Cantaloupe/Musk melon/Kharbooj is a popular fruit crop grown throughout the India. This fruit is being used as desert fruit and also eaten fresh. This fruit belongs to 'Cucurbitaceae' family and its botanical name is 'Cucumus Mela .L.'",
+    "infoLink": "https://www.agrifarming.in/cantaloupe-farming"
+},
+{
+    "name": "oil seeds",
+    "imgSrc": "crop_images/oil_seeds.jpeg",
+    "imgDesc": "Oilseeds occupy a very important position in the agricultural economy of India. Oilseeds constitute an important group of commercial crops in India.",
+    "infoLink": "https://www.agrifarming.in/oilseeds-farming-in-india-a-profitable-business"
+},
+{
+    "name": "orange",
+    "imgSrc": "crop_images/orange.jpeg",
+    "imgDesc": "Madarin orange(Citrus reticulata) is most common among citrus fruits grown in India. It occupies early 40% of the total area under citrus cultivation in India.",
+    "infoLink": "https://www.agrifarming.in/orange-farming"
+},
+{
+    "name": "paddy",
+    "imgSrc": "crop_images/paddy.jpeg",
+    "imgDesc": "Rice is the staple crop of India, and every day millions of Indians find comfort in it. With a high carbohydrate content, it is known to provide instant energy, and is a staple that is consumed by the majority of India’s population. Hence, the importance of rice crop in the country can’t be negated.",
+    "infoLink": "https://geographyandyou.com/cultivating-rice-crop/"
+},
+{
+    "name": "papaya",
+    "imgSrc": "crop_images/papaya.jpeg",
+    "imgDesc": "Papaya is a popular fruit famous for its high nutritive and medicinal values. It comes early in bearing than any other fruit crop, produces fruits in less than a year and the production of fruits is quite high per unit area.",
+    "infoLink": "https://www.bighaat.com/pages/papaya-farming"
+},
+{
+    "name": "pigeonpeas",
+    "imgSrc": "crop_images/pigeonpeas.jpeg",
+    "imgDesc": "Pigeonpea (Cajanus cajan (L.) Millsp.), commonly known as red gram or tur or Arhar, is a very old crop of this country. After gram, arhar is the second most important pulse crop in the country.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/pigeon-pea"
+},
+{
+    "name": "pomegranate",
+    "imgSrc": "crop_images/pomegranate.jpeg",
+    "imgDesc": "Pomegranate (Punica granatum) is one of the commercially important fruit crops of India. It is native to Iran (Persia).",
+    "infoLink": "https://agricultureguruji.com/pomegranate-farming/"
+},
+{
+    "name": "pulses",
+    "imgSrc": "crop_images/pulses.jpeg",
+    "imgDesc": "Pulses are annual leguminous crops yielding between one and 12 grains or seeds of variable size, shape and colour within a pod, used for both food and feed.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/pulses/pulses-in-india"
+},
+{
+    "name": "rice",
+    "imgSrc": "crop_images/rice.jpeg",
+    "imgDesc": "Rice is the staple crop of India, and every day millions of Indians find comfort in it. With a high carbohydrate content, it is known to provide instant energy, and is a staple that is consumed by the majority of India’s population. Hence, the importance of rice crop in the country can’t be negated.",
+    "infoLink": "https://geographyandyou.com/cultivating-rice-crop/"
+},
+{
+    "name": "sugarcane",
+    "imgSrc": "crop_images/sugarcane.jpeg",
+    "imgDesc": "THE sugarcane sector plays a significant role in Indian economy as it provides raw material for sugar and industries producing alcohol, paper, chemicals and cattle feed.",
+    "infoLink": "https://www.agrifarming.in/sugarcane-farming-for-guide-beginners"
+},
+{
+    "name": "tobacco",
+    "imgSrc": "crop_images/tobacco.jpeg",
+    "imgDesc": "In India, tobacco is grown on 0.45 M ha of area (accounting for only 0.31% of net cultivated area in the country) with 750 M kg production. The world tobacco production is ~7 billion kg, China occupying the first place with 2.35 billion kg.",
+    "infoLink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/commercial-crops/tobacco"
+},
+{
+    "name": "watermelon",
+    "imgSrc": "crop_images/watermelon.jpeg",
+    "imgDesc": "Watermelon is originated in South Africa. It is an important cucurbitaceous vegetable in India. It is an excellent desert fruit and its juice contain 92% water along with proteins, minerals and carbohydrates.",
+    "infoLink": "https://www.apnikheti.com/en/pn/agriculture/horticulture/fruit/watermelon"
+},
+{
+    "name": "wheat",
+    "imgSrc": "crop_images/wheat.jpeg",
+    "imgDesc": "Wheat is the main cereal crop in India. The total area under the crop is about 29.8 million hectares in the country.",
+    "infoLink": "https://farmer.gov.in/m_cropstaticswheat.aspx"
+}
+
