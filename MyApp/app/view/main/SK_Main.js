@@ -203,12 +203,17 @@ var cropData =
 ];
 
 function loadDoc_fertilizer(instance) {
-    var url = "https://us-central1-aiplatform.googleapis.com/v1/projects/967879429686/locations/us-central1/endpoints/8594530550604103680:predict";
+    var LOCATION=fert_env_vars.LOCATION
+    var ENDPOINT_ID=fert_env_vars.ENDPOINT_ID
+    var PROJECT=fert_env_vars.PROJECT
+    var TOKEN=fert_env_vars.TOKEN
+
+    var url = `https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/endpoints/${ENDPOINT_ID}:predict`;
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
 
-    xhr.setRequestHeader("Authorization", "Bearer ya29.A0ARrdaM9wv1wLDg1AaBX-caHYqb-hlg0wA535gjRxYSwYC5CJGpsUZhKWc1FFY3KRlv3htDxmiaKkxNr2lRdihkWImPR_9HiHO0GHySkJXnuVJlxYbEgekjbccrdLtTrylxpA8WHGN7sdMDXyqfv5bq469C8vig");
+    xhr.setRequestHeader("Authorization", `Bearer ${TOKEN}`);
     xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
 
     xhr.onreadystatechange = function () {
@@ -259,12 +264,17 @@ function loadDoc_fertilizer(instance) {
 }
 
 function loadDoc(instance) {
-    var url = "https://us-central1-aiplatform.googleapis.com/v1/projects/967879429686/locations/us-central1/endpoints/4167492116898906112:predict";
+    var LOCATION=crop_env_vars.LOCATION
+    var ENDPOINT_ID=crop_env_vars.ENDPOINT_ID
+    var PROJECT=crop_env_vars.PROJECT
+    var TOKEN=crop_env_vars.TOKEN
+
+    var url = `https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/endpoints/${ENDPOINT_ID}:predict`;
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
 
-    xhr.setRequestHeader("Authorization", "Bearer ya29.A0ARrdaM9wv1wLDg1AaBX-caHYqb-hlg0wA535gjRxYSwYC5CJGpsUZhKWc1FFY3KRlv3htDxmiaKkxNr2lRdihkWImPR_9HiHO0GHySkJXnuVJlxYbEgekjbccrdLtTrylxpA8WHGN7sdMDXyqfv5bq469C8vig");
+    xhr.setRequestHeader("Authorization", `Bearer ${TOKEN}`);
     xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
 
     xhr.onreadystatechange = function () {
